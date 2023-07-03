@@ -1,0 +1,163 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../components/constants/variables.scss';
+
+.CadastroContainer {
+    margin: 0;
+    padding: 10px 20px;
+    position: relative;
+
+    .CadastroHeader {
+        display: none;
+
+        &.show {
+            display: grid;
+        }
+        row-gap: 15px;
+        margin-bottom: 30px;
+
+        .SearchContainer {
+            .InputText {
+                font-weight: $bold;
+                color: $primary;
+                background-color: $primary-gray;
+            }
+
+            .Input {
+                font-weight: $normal;
+
+                &:focus {
+                    border-color: transparent;
+                    box-shadow: 0 0 0 0.05rem rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+
+        .PedidoContainer {
+            height: 350px;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+
+            .table {
+                .BtnAdicionar {
+                    color: $primary;
+                    background-color: $primary-gray;
+
+                    &:hover {
+                        background-color: $primary;
+                        color: $backgroundPrimary;
+                    }
+                }
+            }
+        }
+    }
+
+    .CadastroBody {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+        .TabelaPedidosContainer {
+            overflow-x: auto;
+            .table {
+                .ColQtd {
+                    max-width: 50px;
+                    text-align: center;
+                }
+
+                .ColExcluir {
+                    text-align: center;
+                }
+    
+                .BtnExcluir {
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+    
+                    svg {
+                        width: 21px;
+                        height: 21px;
+                        fill: $redDefault;
+                      }
+                }
+            }
+        }
+
+        .altertFornecedorFull, .cadastrarOrcamentoError {
+            padding: 0.4em;
+            opacity: 0;
+            transition: opacity 300ms;
+
+            &.show {
+                opacity: 1;
+            }
+        }
+        .BtnContainer {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            margin: 15px 0;
+
+            .BtnVoltarOrcamento {
+                margin-right: 10px;
+                border: 1px solid $secundary-gray;
+                color: $secundary-gray;
+                background-color: $backgroundSecundary;
+        
+                &:hover {
+                    border: 1px solid $primary;
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+            .BtnCadastrarOrcamento {
+                color: $primary;
+                background-color: $primary-gray;
+        
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+        }
+    
+        .modal {
+            background-color: rgba(0, 0, 0, 0.5);
+            .BtnModalCancel {
+                color: $primary;
+                background-color: $secundary-gray;
+    
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+            .BtnModalConfirm {
+                color: $primary;
+                background-color: $primary-gray;
+    
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+        }
+
+        .TabelaPrecosContainer {
+            overflow-x: auto;
+            .BtnCadastrarOrcamento {
+                color: $primary;
+                background-color: $primary-gray;
+        
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+
+            .ModalDetalhes {
+                overflow-x: auto;
+            }
+        }
+    }
+}

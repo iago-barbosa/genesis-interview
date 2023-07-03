@@ -1,0 +1,58 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../components/constants/variables.scss';
+
+.loginContainter {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: $primary-gray;
+    color: $primary;
+    justify-content: center;
+
+    .loginFormContainer {
+        padding-top: 40px;
+        .loginForm {
+            .btn {
+                color: $primary;
+                border: 1px solid $primary;
+                width: 100%;
+    
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+        }
+    }
+
+    .background {
+        display: none;
+        background-image: url('../../assets/backgroundLogin.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    
+    @include media-breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .loginFormContainer {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+
+            .loginForm {
+                height: 300px;
+                width: 300px;
+            }
+        }
+
+        .background {
+            display: block;
+        }
+    
+        
+    }
+}

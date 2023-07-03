@@ -1,0 +1,56 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../components/constants/variables.scss';
+
+.cadastrarCompradorContainer {
+    width: 100%;
+    padding: 30px 15px;
+
+    .cadastroContainer {
+
+        .inputContainer {
+            .inputLabel {
+                font-weight: $bold;
+            }
+
+            .inputCadastro {
+                font-weight: $normal;
+
+                &:focus {
+                    border-color: transparent;
+                    box-shadow: 0 0 0 0.05rem rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+
+        .inputContainerButton {
+            display: flex;
+            justify-content: end;
+
+            .buttonCadastrar {
+                color: $primary;
+                background-color: $primary-gray;
+                border: none;
+
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+        }
+        .altertMessage {
+            color: $dangerMessage;
+            font-size: 14px;
+        }
+    }
+
+
+    @include media-breakpoint-up(md) { 
+        display: flex;
+        justify-content: center;
+        
+        .cadastroContainer {
+            max-width: 700px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../components/constants/variables.scss';
+
+.ListaPedidosContainer {
+    margin: 0;
+    overflow-x: auto;
+    padding: 10px 20px;
+    position: relative;
+
+    .TitleListaPedidos {
+        font-size: 24px;
+        font-weight: $bold;
+        color: $primary-gray;
+    }
+
+    .TablePedidos {
+        text-align: center;
+        .TableRow {
+            cursor: pointer;
+
+            &:hover {
+                td {
+                    background-color: $primary-gray;
+                    color: $primary;
+                    font-weight: $bold;
+                }
+            }
+        }
+    }
+}

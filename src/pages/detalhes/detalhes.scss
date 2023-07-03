@@ -1,0 +1,41 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../components/constants/variables.scss';
+
+.DetalhesPedidoContainer {
+    margin: 30px 15px;
+
+
+    .HeaderContainer {
+        display: grid;
+
+        .HeaderDetalhesContent {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            margin-bottom: 30px;
+
+            .content {
+                .title {
+                    margin-right: 5px;
+                    font-weight: $bold;
+                }
+            }
+        }
+    }
+
+    .TableContainer {
+        overflow-x: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin: 30px ;
+
+        .HeaderContainer {
+    
+            .HeaderDetalhesContent {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+}

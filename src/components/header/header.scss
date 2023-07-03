@@ -1,0 +1,175 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../constants/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: $backgroundPrimary;
+    color: $primary;
+
+    .logo {
+        display: grid;
+        max-width: 50%;
+        img {
+            max-width: 260px;
+            width: 100%;
+        }
+    }
+
+    .menuMobile {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+            width: 28px;
+            height: 28px;
+            fill: $primary;
+          }
+    }
+
+    .menuContainer {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        background-color: $backgroundPrimary;
+        z-index: $zindex-toast;
+        opacity: 0;
+        transition: width 0.3s;
+    
+        &.fade-in {
+            opacity: 1;
+            width: 240px;
+
+            .menuHeader, .menuBody {
+                display: grid;
+            }
+        }
+    
+        .menuHeader {
+            display: none;
+            justify-content: end;
+            margin: 15px 30px 0px 0px;
+    
+            .content {
+                display: grid;
+                svg {
+                    cursor: pointer;
+                    width: 28px;
+                    height: 28px;
+                    fill: $primary;
+                }
+            }
+        }
+    
+        .menuBody {
+            display: none;
+            padding-top: 15px;
+            gap: 20px;
+    
+            .item {
+                
+                height: 40px;
+                display: grid;
+                align-items: center;
+                color: $primary;
+                cursor: pointer;
+                padding: 0;
+    
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+    
+                p {
+                    padding-right: 30px;
+                    text-align: end;
+                    font-size: 19px;
+                    margin: 0;
+                    line-height: 2rem;
+                    font-weight: 400;
+                }
+    
+                svg {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    .scrim {
+        opacity: 0;
+        display: none;
+        z-index: $zindex-tooltip;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition-property: opacity;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.3s;
+    
+        &.fade-in {
+            opacity: 1;
+            display: block;
+        }
+    }
+
+    .menu, .logout {
+        display: none;
+    }
+
+    @include media-breakpoint-up(md) { 
+        .menuMobile {
+            display: none;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+    
+            .content {
+                padding: 0 10px;
+                cursor: pointer;
+                display: grid;
+                align-content: center;
+                border-radius: $borderRadius;
+    
+                p {
+                    margin: 0 auto;
+                }
+    
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+    
+        }
+    
+        .logout {
+            display: block;
+
+            .btn-logout {
+                color: $primary;
+                border: 1px solid $primary;
+    
+                &:hover {
+                    background-color: $primary;
+                    color: $backgroundPrimary;
+                }
+            }
+        }
+
+     }
+
+
+}
